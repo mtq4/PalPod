@@ -39,7 +39,7 @@ npm install
 
 ## Rename the .env_example File to .env
 
-``sh
+```sh
 mv .env_example .env
 ```
 
