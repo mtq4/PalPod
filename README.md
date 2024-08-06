@@ -55,6 +55,13 @@ nano .env
 node index.js
 ```
 
+## FOR CONTRIUBTERS
+
+```sh
+npm run start
+```
+**DONT START IF YOUR NOT A CONTRIBUTER IT WILL HAVE SOME ERROR**
+
 ## Additional Information
 
 - **Support**: For any issues or support, please open an issue on the GitHub repository.
