@@ -24,7 +24,7 @@
     "Meta": {
       "Version": "Skyport Images v2"
     },
-    "Id": "74ae6742-f644-4a8b-b1ae-a74b8cb3bcfc"
+    "Id": "469c4088-625c-4548-ae91-4d9e55269c13"
   },
   {
     "Image": "quay.io/skyport/java:21",
@@ -51,7 +51,7 @@
     "Meta": {
       "Version": "Skyport Images v2"
     },
-    "Id": "9a8a35a7-8450-450c-be54-f2a58c9f6bb1"
+    "Id": "08f4743f-a865-403e-8a4f-ba82ff366428"
   },
   {
     "Image": "quay.io/skyport/python:lts",
@@ -74,7 +74,7 @@
     "Meta": {
       "Version": "Skyport Images v2"
     },
-    "Id": "452c96f7-9900-4dc1-a825-0021ef22cdfd"
+    "Id": "20ccdb6d-27b7-4f77-923f-580784194589"
   },
   {
     "Image": "quay.io/skyport/nodejs:lts",
@@ -97,6 +97,6 @@
     "Meta": {
       "Version": "Skyport Images v2"
     },
-    "Id": "47ab788b-abe4-46c5-b701-4dc810a538bb"
+    "Id": "9726891a-347a-4439-8c56-a4475dd91290"
   }
 ]

@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const fs = require('fs');
 const passport = require('passport');
+const chalk = require('chalk');
 const ejs = require('ejs');
 const path = require('path');
 const axios = require('axios');
@@ -15,6 +16,8 @@ const expressWs = require('express-ws')(app);
 
 const { db } = require('./function/db');
 
+const asciiFilePath = path.join(__dirname, './function/ascii.txt');
+
 // Add admin users
 if (!process.env.ADMIN_USERS) {
   console.warn('No admin users defined. Skipping admin user creation.');
@@ -24,6 +27,14 @@ if (!process.env.ADMIN_USERS) {
     db.set(`admin-${admins[i]}`, true);
   }
 }
+
+fs.readFile(asciiFilePath, 'utf8', (err, data) => {
+  if (err) {
+      console.error('Error reading the ASCII art file:', err);
+      return;
+  }
+  console.log(data);
+});
 
 // Set up ejs as the view engine
 app.set('view engine', 'ejs');
@@ -42,6 +53,8 @@ app.use(passport.session());
 
 // IP middleware
 app.use(requestIp.mw());
+
+
 
 // VPN detection middleware
 app.use(async (req, res, next) => {
@@ -72,6 +85,10 @@ for (let i = 0; i < allRoutes.length; i++) {
   expressWs.applyTo(route);
   app.use('/', route);
 }
+
+app.use((req, res, next) => {
+  res.status(404).render('errors/404');
+});
 
 // Serve static files (after VPN detection)
 app.use(express.static(path.join(__dirname, 'public')));

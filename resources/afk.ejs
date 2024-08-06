@@ -1,6 +1,6 @@
 <%- include('./components/wrapper') %>
 
-        <main class="flex-1 bg-gray-800">
+        <main id="content" class="flex-1">
           <div class="py-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               <!-- Content -->
@@ -51,23 +51,11 @@
                 }
                 connect();
               </script>
-              <p class="text-white">You are currently earning coins using the AFK page!</p>
-              <p class="text-gray-400">
-                You will earn a coin in
-                <code class="text-white" id="coinCountdown">Connecting to websocket...</code>
+              <center><p class="text-gray-400">You Will Earn 1 Coin Per Minute</p></center>
+              <center><p class="text-gray-400">
+                <h1 class="text-white font-bold" id="coinCountdown">Connecting to websocket...</h1>
               </p>
-              <p class="text-gray-400">
-                This earning session you have earned
-                <code class="text-white" id="sessionEarn">0 coins</code>
-              </p>
-              <p class="text-gray-400">
-                Your current balance
-                <code class="text-white" id="currentCoins"><%= coins %> coins</code>
-              </p>
-              <p class="text-gray-400">
-                You have been AFK for
-                <code class="text-white" id="afkTime">0 hours, 0 minutes, and 0 seconds</code>
-              </p>
+            </center>
             </div>
           </div>
         </main>

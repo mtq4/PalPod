@@ -1,13 +1,12 @@
 {
-  "name": "PalPod",
+  "name": "palpod",
   "version": "1.0.0",
   "description": "The better version of Heliactyl.",
   "main": "index.js",
-  "author": "mtq4",
+  "author": "overnode",
   "license": "ISC",
   "scripts": {
-    "start:dev": "nodemon index.js",
-    "start": "node index.js",
+    "start": "nodemon app.js",
     "build": "npx tailwindcss -i ./tailwind.conf -o ./public/tailwind.css --watch"
   },
   "dependencies": {
