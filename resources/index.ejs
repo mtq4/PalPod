@@ -29,7 +29,7 @@
     <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md space-y-8 login-box p-8">
             <div>
-                <% if (req.query.err == "INTERNALERROR") { %>
+                <% if (req.query.err == "PANELUNAUTHORIZED") { %>
                 <div class="bg-red-900/50 border-l-4 border-red-400 rounded-lg text-red-100 px-4 py-3 relative" role="alert">
                     <div class="flex">
                         <div class="py-1">
@@ -38,12 +38,13 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-bold">Internal Server Error</p>
-                            <p class="text-sm relative">PalPod couldn't process the action due to an internal issue.</p>
+                            <p class="font-bold">PANEL UNAUTHORIZED</p>
+                            <p class="text-sm relative">Please Check Your Api-Key and Panel URL if you have set that correctly and een that isnt working that mean your panel is down. ErrorCode-401</p>
                         </div>
                     </div>
                 </div>
                 <% } %>
+                
                 <% if (req.query.err == "BANNED") { %>
                 <div class="bg-red-900/50 border-l-4 border-red-400 rounded-lg text-red-100 px-4 py-3 relative" role="alert">
                     <div class="flex">

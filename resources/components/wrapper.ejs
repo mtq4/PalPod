@@ -37,44 +37,6 @@
       transition: all 0.3s ease-in-out;
     }
   </style>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const sidebar = document.querySelector('.sidebar');
-      const toggleButton = document.getElementById('sidebar-toggle');
-      const colcont = document.getElementById('colcont');
-
-      function setCookie(name, value, days) {
-          const date = new Date();
-          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-          const expires = "expires=" + date.toUTCString();
-          document.cookie = name + "=" + value + ";" + expires + ";path=/";
-      }
-      function getCookie(name) {
-          const nameEQ = name + "=";
-          const ca = document.cookie.split(';');
-          for(let i = 0; i < ca.length; i++) {
-              let c = ca[i];
-              while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-              if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-          }
-          return null;
-      }
-      const sidebarState = getCookie('sidebar-collapsed');
-      if (sidebarState === 'true') {
-          sidebar.classList.add('collapsed');
-          colcont.classList.add('colcont');
-      } else {
-          sidebar.classList.remove('collapsed');
-          colcont.classList.remove('colcont');
-      }
-      toggleButton.addEventListener('click', () => {
-          sidebar.classList.toggle('collapsed');
-          colcont.classList.toggle('colcont');
-          const isCollapsed = sidebar.classList.contains('collapsed');
-          setCookie('sidebar-collapsed', isCollapsed, 7);
-      });
-  });
-</script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -98,7 +60,7 @@
         <div class="pl-6 pt-5 pb-4 flex">
           <a href="/" class="flex">
 
-            <h1 class="text-white font-medium tracking-tight text-lg"><%= name %></h1>
+            <img class="h-8 w-8 rounded-full bg-transparent " src="https://mtq4.pages.dev/ustakly.png" alt=""><h1 class="text-white font-medium tracking-tight text-lg p-8">-<%= name %></h1>
           </a>
         </div>
         <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -155,7 +117,7 @@
               <% if (admin == true) { %>
                 <p class="pl-8 text-neutral-400 text-xs font-semibold pt-6 pb-2"><span>Admin Panel</span></p>
               <li>
-                <a href="/admin/nodes" class="hover:scale-105 transition nav-link mt-1 text-neutral-400 px-4 mx-4 group flex gap-x-3 shadow-none py-2 rounded-lg shadow-sm text-sm leading-6 font-normal">            
+                <a href="/admin" class="hover:scale-105 transition nav-link mt-1 text-neutral-400 px-4 mx-4 group flex gap-x-3 shadow-none py-2 rounded-lg shadow-sm text-sm leading-6 font-normal">            
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 mt-0.5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
                   </svg>                                
@@ -206,12 +168,7 @@
   
   <div id="colcont" class="lg:pl-56">
     <div class="sticky backdrop-blur top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 bg-transparent px-4 shadow-sm sm:gap-x-6 sm:px-4 lg:px-4">
-      <button type="button" id="sidebar-toggle" class="w-fit p-2 mt-1 rounded-lg text-white border border-white/5 hover:scale-110 active:scale-100 duration-200">
-        <span class="sr-only">Open sidebar</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
+    
 
       <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
         <div class="relative flex flex-1 flex-col">
